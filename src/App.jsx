@@ -13,7 +13,7 @@ import Contact from './pages/Contact'
  */
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="HusnaAgroFoods">
       <Routes>
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
