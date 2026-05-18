@@ -1,0 +1,59 @@
+@import 'tailwindcss';
+
+/* Brand tokens — maize yellow, deep green, warm orange, neutrals */
+@theme {
+  --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Fraunces', ui-serif, Georgia, serif;
+
+  --color-maize-50: #fffbeb;
+  --color-maize-100: #fef3c7;
+  --color-maize-300: #fcd34d;
+  --color-maize-400: #fbbf24;
+  --color-maize-500: #f59e0b;
+
+  --color-forest-600: #166534;
+  --color-forest-700: #15803d;
+  --color-forest-800: #14532d;
+  --color-forest-900: #052e16;
+
+  --color-accent-400: #fb923c;
+  --color-accent-500: #f97316;
+  --color-accent-600: #ea580c;
+
+  --color-ink-900: #0f1419;
+  --color-ink-800: #1a222c;
+  --color-cream-50: #faf9f6;
+  --color-cream-100: #f4f1ea;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--color-cream-50);
+  color: var(--color-ink-900);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Focus visibility for keyboard users */
+:focus-visible {
+  outline: 2px solid var(--color-maize-400);
+  outline-offset: 3px;
+}
+
+/* Full-width section separators — maize → forest → warm orange whisper */
+.section-separator {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    color-mix(in srgb, var(--color-maize-300) 45%, transparent) 22%,
+    color-mix(in srgb, var(--color-forest-700) 28%, transparent) 50%,
+    color-mix(in srgb, var(--color-accent-500) 22%, transparent) 78%,
+    transparent 100%
+  );
+}
