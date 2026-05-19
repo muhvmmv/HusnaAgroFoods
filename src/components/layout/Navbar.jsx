@@ -41,7 +41,7 @@ export default function Navbar() {
   }, [open])
 
   return (
-    <header className="sticky top-0 z-50 border-b border-ink-900/[0.06] bg-cream-50/85 backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-ink-900/[0.06] bg-cream-50/95 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:h-[4.25rem] sm:px-6 lg:px-8">
         <Link
           to="/"
@@ -56,10 +56,20 @@ export default function Navbar() {
             fetchPriority="high"
           />
           <span className="flex flex-col leading-tight">
-            <span className="font-display text-lg font-semibold tracking-tight text-forest-900 sm:text-xl">
+            <span className="relative inline-block w-fit font-display text-lg font-semibold tracking-tight text-forest-900 sm:text-xl">
               Husna Agro Foods
+              <span
+                className="absolute -bottom-1 left-0 flex w-full items-center gap-1"
+                aria-hidden
+              >
+                <span className="h-px flex-1 rounded-full bg-gradient-to-r from-transparent to-forest-700/70" />
+                <span className="h-1 w-1 rotate-45 rounded-sm bg-maize-400" />
+                <span className="h-[3px] min-w-[3.5rem] flex-[1.4] rounded-full bg-gradient-to-r from-maize-400 via-accent-500 to-maize-400 sm:min-w-[4.5rem]" />
+                <span className="h-1 w-1 rotate-45 rounded-sm bg-maize-400" />
+                <span className="h-px flex-1 rounded-full bg-gradient-to-l from-transparent to-forest-700/70" />
+              </span>
             </span>
-            <span className="hidden text-xs font-medium text-ink-800/60 sm:block">
+            <span className="mt-1 hidden text-xs font-medium text-ink-800/60 sm:block">
               Maize flour &amp; grits
             </span>
           </span>
@@ -94,12 +104,15 @@ export default function Navbar() {
 
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-ink-900/10 bg-white/70 text-forest-900 shadow-sm transition-colors duration-300 hover:border-maize-300/50 hover:bg-maize-50 lg:hidden"
+            className="inline-flex min-w-[3.25rem] flex-col items-center justify-center gap-0.5 rounded-xl border border-ink-900/10 bg-white/70 px-2.5 py-2 text-forest-900 shadow-sm transition-colors duration-300 hover:border-maize-300/50 hover:bg-maize-50 lg:hidden"
             aria-expanded={open}
             aria-controls="mobile-menu"
             onClick={() => setOpen((v) => !v)}
           >
-            {open ? <HiX className="h-6 w-6" aria-hidden /> : <HiMenuAlt3 className="h-6 w-6" aria-hidden />}
+            {open ? <HiX className="h-5 w-5" aria-hidden /> : <HiMenuAlt3 className="h-5 w-5" aria-hidden />}
+            <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-forest-800">
+              Menu
+            </span>
             <span className="sr-only">{open ? 'Close menu' : 'Open menu'}</span>
           </button>
         </div>
