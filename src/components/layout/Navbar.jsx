@@ -6,7 +6,7 @@ import { HiMenuAlt3, HiX } from 'react-icons/hi'
 const MotionLink = motion.create(Link)
 
 /** File must live in `public/` so the path is served from the site root. */
-const NAV_LOGO_SRC = '/logoo.jpeg'
+const NAV_LOGO_SRC = `${import.meta.env.BASE_URL}logoo.jpeg`
 /** Empty: company name is in text beside the mark (avoids duplicate SR announcements). */
 const NAV_LOGO_ALT = ''
 

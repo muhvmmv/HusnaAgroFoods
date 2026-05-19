@@ -10,7 +10,7 @@ const FACEBOOK_URL =
 const MotionLink = motion.create(Link)
 
 /** Same mark as navbar (`public/logoo.jpeg`). */
-const FOOTER_LOGO_SRC = '/logoo.jpeg'
+const FOOTER_LOGO_SRC = `${import.meta.env.BASE_URL}logoo.jpeg`
 
 const footerLinks = [
   { to: '/about', label: 'About' },
