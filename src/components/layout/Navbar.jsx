@@ -16,7 +16,6 @@ const links = [
   { to: '/products', label: 'Products' },
   { to: '/processing', label: 'Processing & Quality' },
   { to: '/team', label: 'Team' },
-  { to: '/contact', label: 'Contact' },
 ]
 
 const navClass = ({ isActive }) =>
@@ -140,9 +139,9 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', stiffness: 320, damping: 34 }}
-              className="fixed inset-y-0 right-0 z-50 flex w-[min(100%,20rem)] flex-col border-l border-ink-900/10 bg-cream-50 shadow-2xl lg:hidden"
+              className="fixed inset-y-0 right-0 z-50 flex w-[min(100%,20rem)] flex-col border-l border-ink-900/10 bg-white opacity-100 shadow-2xl backdrop-blur-none lg:hidden"
             >
-              <div className="flex items-center justify-between border-b border-ink-900/5 px-4 py-4">
+              <div className="flex items-center justify-between border-b border-ink-900/5 bg-white px-4 py-4">
                 <span className="font-display text-lg font-semibold text-forest-900">Menu</span>
                 <button
                   type="button"
@@ -153,7 +152,7 @@ export default function Navbar() {
                   <span className="sr-only">Close</span>
                 </button>
               </div>
-              <nav className="flex flex-1 flex-col gap-1 p-4" aria-label="Mobile primary">
+              <nav className="flex flex-1 flex-col gap-1 bg-white p-4" aria-label="Mobile primary">
                 {links.map((l, i) => (
                   <motion.div
                     key={l.to}
@@ -179,7 +178,7 @@ export default function Navbar() {
                   </motion.div>
                 ))}
               </nav>
-              <div className="border-t border-ink-900/5 p-4">
+              <div className="border-t border-ink-900/5 bg-white p-4">
                 <MotionLink
                   to="/contact"
                   onClick={() => setOpen(false)}
